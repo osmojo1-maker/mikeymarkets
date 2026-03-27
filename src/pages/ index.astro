@@ -1,17 +1,72 @@
 ---
-
+const brands = [
+{
+name: 'Travel the OC',
+link: 'https://www.traveltheoc.com',
+desc: 'Local Orange County media brand',
+color: '#06b6d4',
+},
+{
+name: "Mikey's RV",
+link: 'https://www.mikeysrv.com',
+desc: 'RV lifestyle + reviews',
+color: '#f59e42',
+},
+{
+name: 'Earbuds/Audio',
+link: '#',
+desc: 'Product reviews, buyer guides',
+color: '#a78bfa',
+},
+{
+name: 'Mikey Marketing',
+link: '#',
+desc: 'Content strategy & affiliate growth',
+color: '#6ee7b7',
+},
+];
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html>
+<head>
+<title>Mikey Markets LLC</title>
+<meta name="description" content="Building four brands to $2k/month each – Mikey Markets HQ" />
+<style>
+body { font-family: Arial, sans-serif; margin: 0; background: #fff; color: #222;}
+.hero {padding: 3rem 1rem; text-align: center;}
+.brands { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin: 2rem 0; }
+.brand-block { border-radius: 10px; min-width: 200px; max-width: 240px; box-shadow: 0 8px 24px #0001; padding: 1.2rem; background: #f9f9f9; border: 2px solid #eee; }
+.brand-block a { color: inherit; text-decoration: none; }
+.status {background: #e0f2fe; border-left: 4px solid #06b6d4; margin: 2rem auto; max-width: 500px; padding: 1rem .9rem; font-size: 1.2rem;}
+nav {text-align: center; margin-bottom: 1.2rem;}
+nav a {margin: 0 .7rem; color: #06b6d4;font-weight: bold;text-decoration: none;}
+nav a.active { text-decoration: underline dotted; }
+</style>
+</head>
+<body>
+<nav>
+<a href="/">Home</a>
+<a href="/brands">Brands</a>
+<a href="/about">About</a>
+<a href="/contact">Contact</a>
+<a href="/privacy">Privacy</a>
+</nav>
+<section class="hero">
+<h1><span style="color:#06b6d4">Mikey Markets LLC</span></h1>
+<h2>Building <b>4 brands</b> to <b>$2k/month each</b> <span style="color:#f59e42">— No hype. No shortcuts.</span></h2>
+<p>Portfolio HQ for our microbrand media experiments, affiliate pivots, and RV adventures.<br />
+<em>“Start simple, scale as you learn, earn freedom along the way.”</em></p>
+</section>
+<div class="brands">
+{brands.map(b => (
+<div class="brand-block" style={{ borderColor: b.color }}>
+<a href={b.link} target="_blank"><h3>{b.name}</h3></a>
+<p>{b.desc}</p>
+</div>
+))}
+</div>
+<div class="status">
+<b>Current Status:</b> Launching all four brands, tackling web setup & first affiliate revenue milestones.
+</div>
+</body>
 </html>
+
